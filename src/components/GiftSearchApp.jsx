@@ -4,15 +4,15 @@ import { AddCategory } from "./categories/AddCategory";
 export const GiftSearchApp = () => {
   const [categories, setCategories] = useState(["One Punch", "Dragon Ball"]);
 
-  const addCategory = () => {
-    setCategories(["Naruto", ...categories]);
+  const onAddCategory = (NewCategory) => {
+    console.log(NewCategory);
+    setCategories([NewCategory, ...categories]);
   };
 
   return (
     <>
       <h1>Gift Search</h1>
-      <AddCategory setCategories={setCategories} />
-      <button onClick={addCategory}>Add</button>
+      <AddCategory onNewCategory={onAddCategory} />
       <ol>
         {categories.map((category) => {
           return <li key={category}>{category}</li>;
