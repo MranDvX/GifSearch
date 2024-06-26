@@ -5,7 +5,7 @@ export const GiftSearchApp = () => {
   const [categories, setCategories] = useState(["One Punch", "Dragon Ball"]);
 
   const onAddCategory = (NewCategory) => {
-    console.log(NewCategory);
+    if (categories.includes(NewCategory)) return;
     setCategories([NewCategory, ...categories]);
   };
 
